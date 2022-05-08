@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C6CA1DFE2827AD2B00B3E338 /* dinosaurarcadeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA1DFD2827AD2B00B3E338 /* dinosaurarcadeApp.swift */; };
+		C6CA1E002827AD2B00B3E338 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA1DFF2827AD2B00B3E338 /* ContentView.swift */; };
+		C6CA1E022827AD2D00B3E338 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6CA1E012827AD2D00B3E338 /* Assets.xcassets */; };
+		C6CA1E052827AD2D00B3E338 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6CA1E042827AD2D00B3E338 /* Preview Assets.xcassets */; };
+		C6CA1E102827AD2D00B3E338 /* dinosaurarcadeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA1E0F2827AD2D00B3E338 /* dinosaurarcadeTests.swift */; };
+		C6CA1E1A2827AD2D00B3E338 /* dinosaurarcadeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA1E192827AD2D00B3E338 /* dinosaurarcadeUITests.swift */; };
+		C6CA1E1C2827AD2D00B3E338 /* dinosaurarcadeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA1E1B2827AD2D00B3E338 /* dinosaurarcadeUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C6CA1E0C2827AD2D00B3E338 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C6CA1DF22827AD2B00B3E338 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6CA1DF92827AD2B00B3E338;
+			remoteInfo = dinosaurarcade;
+		};
+		C6CA1E162827AD2D00B3E338 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C6CA1DF22827AD2B00B3E338 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C6CA1DF92827AD2B00B3E338;
+			remoteInfo = dinosaurarcade;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C6CA1DFA2827AD2B00B3E338 /* dinosaurarcade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dinosaurarcade.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6CA1DFD2827AD2B00B3E338 /* dinosaurarcadeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dinosaurarcadeApp.swift; sourceTree = "<group>"; };
+		C6CA1DFF2827AD2B00B3E338 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C6CA1E012827AD2D00B3E338 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C6CA1E042827AD2D00B3E338 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C6CA1E062827AD2D00B3E338 /* dinosaurarcade.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = dinosaurarcade.entitlements; sourceTree = "<group>"; };
+		C6CA1E0B2827AD2D00B3E338 /* dinosaurarcadeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dinosaurarcadeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6CA1E0F2827AD2D00B3E338 /* dinosaurarcadeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dinosaurarcadeTests.swift; sourceTree = "<group>"; };
+		C6CA1E152827AD2D00B3E338 /* dinosaurarcadeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dinosaurarcadeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6CA1E192827AD2D00B3E338 /* dinosaurarcadeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dinosaurarcadeUITests.swift; sourceTree = "<group>"; };
+		C6CA1E1B2827AD2D00B3E338 /* dinosaurarcadeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dinosaurarcadeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C6CA1DF72827AD2B00B3E338 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6CA1E082827AD2D00B3E338 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6CA1E122827AD2D00B3E338 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C6CA1DF12827AD2B00B3E338 = {
+			isa = PBXGroup;
+			children = (
+				C6CA1DFC2827AD2B00B3E338 /* dinosaurarcade */,
+				C6CA1E0E2827AD2D00B3E338 /* dinosaurarcadeTests */,
+				C6CA1E182827AD2D00B3E338 /* dinosaurarcadeUITests */,
+				C6CA1DFB2827AD2B00B3E338 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C6CA1DFB2827AD2B00B3E338 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C6CA1DFA2827AD2B00B3E338 /* dinosaurarcade.app */,
+				C6CA1E0B2827AD2D00B3E338 /* dinosaurarcadeTests.xctest */,
+				C6CA1E152827AD2D00B3E338 /* dinosaurarcadeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C6CA1DFC2827AD2B00B3E338 /* dinosaurarcade */ = {
+			isa = PBXGroup;
+			children = (
+				C6CA1DFD2827AD2B00B3E338 /* dinosaurarcadeApp.swift */,
+				C6CA1DFF2827AD2B00B3E338 /* ContentView.swift */,
+				C6CA1E012827AD2D00B3E338 /* Assets.xcassets */,
+				C6CA1E062827AD2D00B3E338 /* dinosaurarcade.entitlements */,
+				C6CA1E032827AD2D00B3E338 /* Preview Content */,
+			);
+			path = dinosaurarcade;
+			sourceTree = "<group>";
+		};
+		C6CA1E032827AD2D00B3E338 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C6CA1E042827AD2D00B3E338 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C6CA1E0E2827AD2D00B3E338 /* dinosaurarcadeTests */ = {
+			isa = PBXGroup;
+			children = (
+				C6CA1E0F2827AD2D00B3E338 /* dinosaurarcadeTests.swift */,
+			);
+			path = dinosaurarcadeTests;
+			sourceTree = "<group>";
+		};
+		C6CA1E182827AD2D00B3E338 /* dinosaurarcadeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C6CA1E192827AD2D00B3E338 /* dinosaurarcadeUITests.swift */,
+				C6CA1E1B2827AD2D00B3E338 /* dinosaurarcadeUITestsLaunchTests.swift */,
+			);
+			path = dinosaurarcadeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C6CA1DF92827AD2B00B3E338 /* dinosaurarcade */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6CA1E1F2827AD2D00B3E338 /* Build configuration list for PBXNativeTarget "dinosaurarcade" */;
+			buildPhases = (
+				C6CA1DF62827AD2B00B3E338 /* Sources */,
+				C6CA1DF72827AD2B00B3E338 /* Frameworks */,
+				C6CA1DF82827AD2B00B3E338 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = dinosaurarcade;
+			productName = dinosaurarcade;
+			productReference = C6CA1DFA2827AD2B00B3E338 /* dinosaurarcade.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C6CA1E0A2827AD2D00B3E338 /* dinosaurarcadeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6CA1E222827AD2D00B3E338 /* Build configuration list for PBXNativeTarget "dinosaurarcadeTests" */;
+			buildPhases = (
+				C6CA1E072827AD2D00B3E338 /* Sources */,
+				C6CA1E082827AD2D00B3E338 /* Frameworks */,
+				C6CA1E092827AD2D00B3E338 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C6CA1E0D2827AD2D00B3E338 /* PBXTargetDependency */,
+			);
+			name = dinosaurarcadeTests;
+			productName = dinosaurarcadeTests;
+			productReference = C6CA1E0B2827AD2D00B3E338 /* dinosaurarcadeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C6CA1E142827AD2D00B3E338 /* dinosaurarcadeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6CA1E252827AD2D00B3E338 /* Build configuration list for PBXNativeTarget "dinosaurarcadeUITests" */;
+			buildPhases = (
+				C6CA1E112827AD2D00B3E338 /* Sources */,
+				C6CA1E122827AD2D00B3E338 /* Frameworks */,
+				C6CA1E132827AD2D00B3E338 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C6CA1E172827AD2D00B3E338 /* PBXTargetDependency */,
+			);
+			name = dinosaurarcadeUITests;
+			productName = dinosaurarcadeUITests;
+			productReference = C6CA1E152827AD2D00B3E338 /* dinosaurarcadeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C6CA1DF22827AD2B00B3E338 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					C6CA1DF92827AD2B00B3E338 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					C6CA1E0A2827AD2D00B3E338 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = C6CA1DF92827AD2B00B3E338;
+					};
+					C6CA1E142827AD2D00B3E338 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = C6CA1DF92827AD2B00B3E338;
+					};
+				};
+			};
+			buildConfigurationList = C6CA1DF52827AD2B00B3E338 /* Build configuration list for PBXProject "dinosaurarcade" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C6CA1DF12827AD2B00B3E338;
+			productRefGroup = C6CA1DFB2827AD2B00B3E338 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C6CA1DF92827AD2B00B3E338 /* dinosaurarcade */,
+				C6CA1E0A2827AD2D00B3E338 /* dinosaurarcadeTests */,
+				C6CA1E142827AD2D00B3E338 /* dinosaurarcadeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C6CA1DF82827AD2B00B3E338 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6CA1E052827AD2D00B3E338 /* Preview Assets.xcassets in Resources */,
+				C6CA1E022827AD2D00B3E338 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6CA1E092827AD2D00B3E338 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6CA1E132827AD2D00B3E338 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C6CA1DF62827AD2B00B3E338 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6CA1E002827AD2B00B3E338 /* ContentView.swift in Sources */,
+				C6CA1DFE2827AD2B00B3E338 /* dinosaurarcadeApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6CA1E072827AD2D00B3E338 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6CA1E102827AD2D00B3E338 /* dinosaurarcadeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6CA1E112827AD2D00B3E338 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6CA1E1A2827AD2D00B3E338 /* dinosaurarcadeUITests.swift in Sources */,
+				C6CA1E1C2827AD2D00B3E338 /* dinosaurarcadeUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C6CA1E0D2827AD2D00B3E338 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C6CA1DF92827AD2B00B3E338 /* dinosaurarcade */;
+			targetProxy = C6CA1E0C2827AD2D00B3E338 /* PBXContainerItemProxy */;
+		};
+		C6CA1E172827AD2D00B3E338 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C6CA1DF92827AD2B00B3E338 /* dinosaurarcade */;
+			targetProxy = C6CA1E162827AD2D00B3E338 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C6CA1E1D2827AD2D00B3E338 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C6CA1E1E2827AD2D00B3E338 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		C6CA1E202827AD2D00B3E338 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = dinosaurarcade/dinosaurarcade.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"dinosaurarcade/Preview Content\"";
+				DEVELOPMENT_TEAM = YR3RRQUU7K;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fulbright.dinosaurarcade;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C6CA1E212827AD2D00B3E338 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = dinosaurarcade/dinosaurarcade.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"dinosaurarcade/Preview Content\"";
+				DEVELOPMENT_TEAM = YR3RRQUU7K;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fulbright.dinosaurarcade;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C6CA1E232827AD2D00B3E338 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YR3RRQUU7K;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fulbright.dinosaurarcadeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dinosaurarcade.app/Contents/MacOS/dinosaurarcade";
+			};
+			name = Debug;
+		};
+		C6CA1E242827AD2D00B3E338 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YR3RRQUU7K;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fulbright.dinosaurarcadeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dinosaurarcade.app/Contents/MacOS/dinosaurarcade";
+			};
+			name = Release;
+		};
+		C6CA1E262827AD2D00B3E338 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YR3RRQUU7K;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fulbright.dinosaurarcadeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = dinosaurarcade;
+			};
+			name = Debug;
+		};
+		C6CA1E272827AD2D00B3E338 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YR3RRQUU7K;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fulbright.dinosaurarcadeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = dinosaurarcade;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C6CA1DF52827AD2B00B3E338 /* Build configuration list for PBXProject "dinosaurarcade" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6CA1E1D2827AD2D00B3E338 /* Debug */,
+				C6CA1E1E2827AD2D00B3E338 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6CA1E1F2827AD2D00B3E338 /* Build configuration list for PBXNativeTarget "dinosaurarcade" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6CA1E202827AD2D00B3E338 /* Debug */,
+				C6CA1E212827AD2D00B3E338 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6CA1E222827AD2D00B3E338 /* Build configuration list for PBXNativeTarget "dinosaurarcadeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6CA1E232827AD2D00B3E338 /* Debug */,
+				C6CA1E242827AD2D00B3E338 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6CA1E252827AD2D00B3E338 /* Build configuration list for PBXNativeTarget "dinosaurarcadeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6CA1E262827AD2D00B3E338 /* Debug */,
+				C6CA1E272827AD2D00B3E338 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C6CA1DF22827AD2B00B3E338 /* Project object */;
+}
