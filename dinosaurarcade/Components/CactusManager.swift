@@ -32,8 +32,7 @@ struct CactusManager: View {
                     
                     cactusPosition.x = 500
                 }
-                    
-                    
+                
 
             }
 
