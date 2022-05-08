@@ -10,8 +10,9 @@ import SwiftUI
 
 struct Cactus: View {
     
-    let width: CGFloat = 10
-    let height: CGFloat = 120
+    let width: CGFloat
+    let height: CGFloat
+    
     let cactusColor = Color.green
     
     var body: some View {

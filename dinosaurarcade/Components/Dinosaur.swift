@@ -10,23 +10,25 @@ import SwiftUI
 
 struct Dinosaur: View {
     
-    @State private var dinosaurPosition = CGPoint(x: 200, y: 400)
-    
+    @Binding var dinosaurPosition: CGPoint
+    let width: CGFloat
+    let height: CGFloat
     let game: IndividualGame
-    let size: CGFloat = 30
+    
     let color: Color = Color.red
+    let jumpHeight: CGFloat = 20
     
     var body: some View {
         
         Rectangle()
-            .frame(width: size, height: size)
+            .frame(width: self.width, height: self.height)
             .foregroundColor(color)
             .position(x: dinosaurPosition.x, y: dinosaurPosition.y)
             .onReceive(game.timer) {a in
                 
                 withAnimation() {
                     // gravity for dinosaur
-                    if (dinosaurPosition.y <= 380) {
+                    if (dinosaurPosition.y <= 400 - 20) {
                         dinosaurPosition.y += 20
                     }
                 }
@@ -46,7 +48,10 @@ struct Dinosaur: View {
         
         // jumps if only it's on the ground
         if (dinosaurPosition.y == 400) {
-            dinosaurPosition.y -= 120
+            withAnimation() {
+                dinosaurPosition.y -= 120
+            }
+            
         }
         
     }
