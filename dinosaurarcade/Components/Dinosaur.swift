@@ -14,12 +14,14 @@ struct Dinosaur: View {
     let width: CGFloat
     let height: CGFloat
     let game: IndividualGame
+    let jumpKey: KeyEquivalent
     
     let color: Color = Color.red
     let jumpHeight: CGFloat = 20
     
     var body: some View {
         
+        // The dinosaur
         Rectangle()
             .frame(width: self.width, height: self.height)
             .foregroundColor(color)
@@ -35,11 +37,12 @@ struct Dinosaur: View {
                 
             }
         
-        
+        // Jump button
         Button("Jump") {
             self.jump()
         }
-        .keyboardShortcut(KeyEquivalent.upArrow, modifiers: [])
+        .keyboardShortcut(jumpKey, modifiers: [])
+        .opacity(0) // hide it
         
     }
     

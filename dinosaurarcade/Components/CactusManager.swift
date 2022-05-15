@@ -16,10 +16,9 @@ struct CactusManager: View {
     let height: CGFloat
     let game: IndividualGame
     
-
-    
     var body: some View {
         Cactus(width: width, height: height)
+        
             .position(x: cactusPosition.x, y: cactusPosition.y)
             .onReceive(game.timer) {a in
                 
