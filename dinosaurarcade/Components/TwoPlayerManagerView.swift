@@ -11,7 +11,7 @@ import SwiftUI
 struct TwoPlayerManagerView: View {
     
     @Binding var twoPlayerManager: TwoPlayerManager
-    @State var winnerDisplayText = ""
+    @State var winnerDisplayText = "-"
     @State var restartButtonLabel = "Next turn"
     
     var body: some View {
@@ -39,13 +39,13 @@ struct TwoPlayerManagerView: View {
     
         }
         
-        // update winner text
+        // update winner and restart button text
         .onChange(of: twoPlayerManager.winnerDetermined) { winnerDetermined in
             if (winnerDetermined) {
                 self.winnerDisplayText = "Player \(twoPlayerManager.winner) wins!"
                 self.restartButtonLabel = "New game"
             } else {
-                self.winnerDisplayText = ""
+                self.winnerDisplayText = "-"
                 self.restartButtonLabel = "Next turn"
             }
         }
