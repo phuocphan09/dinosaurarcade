@@ -21,4 +21,5 @@ struct TwoPlayerState {
             self.player2State.updateTimeLose()
         }
     }
+    
 }

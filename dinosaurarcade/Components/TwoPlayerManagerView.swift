@@ -21,6 +21,9 @@ struct TwoPlayerManagerView: View {
                 .padding(20)
             Text("Player 2 Score: \(self.twoPlayerManager.player2Score)")
                 .font(.system(size: 30))
+            Button("Restart") {
+                twoPlayerManager.doRestart()
+            }
             
         }
         

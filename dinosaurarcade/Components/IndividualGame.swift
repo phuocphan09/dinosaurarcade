@@ -16,7 +16,8 @@ struct IndividualGame: View {
     let jumpKey: KeyEquivalent
 //    let timer: Publishers.Autoconnect<Timer.TimerPublisher>
     
-    let timer = Timer.publish(every: 0.08, on: RunLoop.main, in: .common).autoconnect()
+//    @State var isLose = false
+    @State var timer = Timer.publish(every: 0.08, on: RunLoop.main, in: .common).autoconnect()
     @Binding var manager: TwoPlayerManager
     
     
@@ -51,6 +52,18 @@ struct IndividualGame: View {
             self.collisionCheck()
         }
         
+        .onChange(of: manager.restartState) { restartState in
+            
+            print("player \(self.playerID) : \(restartState)")
+            
+            if (restartState[self.playerID - 1]) {
+                self.restart()
+                manager.doneRestart()
+            }
+            
+        }
+    
+        
     }
     
     
@@ -69,20 +82,23 @@ struct IndividualGame: View {
     // stop the game when collison is made
     func lose() {
         self.timer.upstream.connect().cancel()
-        
         self.manager.lose(playerID: self.playerID)
     }
     
-//    func restart() {
-//
-//        dinosaurPosition.x = self.initialDinosaurPosition["x"]
-//        dinosaurPosition.y = self.initialDinosaurPosition["y"]
-//
-//        cactusPosition.x = self.initialCactusPosition["x"]
-//        cactusPosition.y = self.initialCactusPosition["y"]
-//
-//        self.timer = self.timer.upstream.autoconnect()
-//    }
+    // restart the game -- either for a new turn in a game or a new game
+    func restart() {
+
+        // place objects to its places
+        dinosaurPosition.x = CGFloat(self.initialDinosaurPosition["x"]!)
+        dinosaurPosition.y = CGFloat(self.initialDinosaurPosition["y"]!)
+
+        cactusPosition.x = CGFloat(self.initialCactusPosition["x"]!)
+        cactusPosition.y = CGFloat(self.initialCactusPosition["y"]!)
+
+        // restart the timer
+        self.timer = Timer.publish(every: 0.08, on: RunLoop.main, in: .common).autoconnect()
+        
+    }
     
     func test() {
         print("test function in IndividualGame")
