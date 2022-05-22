@@ -9,9 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    public var timer = Timer.publish(every: 0.08, on: RunLoop.main, in: .common).autoconnect()
     @State var twoPlayerManager = TwoPlayerManager()
-    
     
     var body: some View {
         
