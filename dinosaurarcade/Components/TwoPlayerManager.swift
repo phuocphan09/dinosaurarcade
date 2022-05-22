@@ -14,7 +14,8 @@ struct TwoPlayerManager {
 //    @State var playerState2 = PlayerState(playerID: 2)
     
     @State var twoPlayerState = TwoPlayerState()
-    @State var winner = 1
+    public var winner = 1
+    public var winnerDetermined = false
     public var restartState = [false, false]
     public var player1Score = 0
     public var player2Score = 0
@@ -31,26 +32,31 @@ struct TwoPlayerManager {
     }
     
     public mutating func doRestart() {
-
         
-        if (player1Score + player2Score != 3) {
-            // new turn
-            
-            // restart game
-            self.restart(playerID: 1)
-            self.restart(playerID: 2)
-            
-        } else {
+        if (self.winnerDetermined) {
             // new game
             
-            // restart score
+            // reset score
             player1Score = 0
             player2Score = 0
             
             // restart game
             self.restart(playerID: 1)
             self.restart(playerID: 2)
+            
+            self.winnerDetermined = false
+
+            
+        } else {
+            
+            // new turn -- no reset score
+            
+            // restart game
+            self.restart(playerID: 1)
+            self.restart(playerID: 2)
+
         }
+        
     }
 
     
@@ -87,8 +93,6 @@ struct TwoPlayerManager {
                         
             // update score
             if (player2LoseTime > player1LoseTime) {
-                // if winner is player 2
-                winner = 2
                 self.player2Score += 1
             } else {
                 // if winner is player 1
@@ -103,10 +107,20 @@ struct TwoPlayerManager {
             print("Player 2 Score: \(self.player2Score)")
             
         }
+        
+        // find winner of the game
+        if (player1Score + player2Score == 3 || player2Score == 2 && player1Score == 0 || player1Score == 2 && player2Score == 0) {
+            
+            self.winnerDetermined = true
+            
+            if (player2Score > player1Score) {
+                winner = 2
+            } else {
+                winner = 1
+            }
+            
+        }
     
-        
-        // reset state
-        
         
     }
     

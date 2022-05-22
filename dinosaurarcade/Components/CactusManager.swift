@@ -13,7 +13,7 @@ struct CactusManager: View {
     @Binding var cactusPosition: CGPoint
     @State var cactusXMovement = 30.0
     
-    let speed = 1.004 // change to 1.0 if willing to disable the increasing speed feature
+    let speed = 1.0 // change to 1.0 if willing to disable the increasing speed feature
     let width: CGFloat
     let height: CGFloat
     let game: IndividualGame
