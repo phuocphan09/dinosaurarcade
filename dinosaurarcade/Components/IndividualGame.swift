@@ -110,8 +110,10 @@ struct IndividualGame: View {
     
     // stop the game when collison is made
     func lose() {
+        
         self.timer.upstream.connect().cancel()
         self.manager.lose(playerID: self.playerID)
+        
     }
     
     // restart the game -- either for a new turn in a game or a new game
@@ -134,10 +136,6 @@ struct IndividualGame: View {
     
     func incrementScore() {
         self.score += 1
-    }
-    
-    func test() {
-        print("test function in IndividualGame")
     }
     
     

@@ -11,7 +11,7 @@ import SwiftUI
 struct TwoPlayerManagerView: View {
     
     @Binding var twoPlayerManager: TwoPlayerManager
-    @State var winnerDisplayText = "Competition is in progress.."
+    @State var winnerDisplayText = "Competition is in progress..."
     @State var restartButtonLabel = "Next turn"
     
     var body: some View {
@@ -20,7 +20,7 @@ struct TwoPlayerManagerView: View {
             
             // score display
             HStack {
-            
+                
                 Text("Player1")
                 Spacer()
                 
@@ -43,26 +43,27 @@ struct TwoPlayerManagerView: View {
                 .font(.system(size: 30, weight: .bold))
                 .foregroundColor(Color.blue)
             
+
+            
             // CTA buttons
             HStack {
                 
-                Button("New game") {
-                    twoPlayerManager.doRestart(forceNewGame: true)
-                }
-                .buttonStyle(GlowingButton())
-                
-                
-                // show new turn button if only winner is not determined
+                // show manual new game button if only winner is not determined
                 if (!twoPlayerManager.winnerDetermined) {
                     
-                    Button(self.restartButtonLabel) {
-                        twoPlayerManager.doRestart(forceNewGame: false)
+                    Button("New game") {
+                        twoPlayerManager.doRestart(forceNewGame: true)
                     }
-                    .buttonStyle(GlowingButton())
+                    .buttonStyle(GlowingButton(isMainCTA: false))
                     
                 }
-
                 
+            
+                Button(self.restartButtonLabel) {
+                    twoPlayerManager.doRestart(forceNewGame: false)
+                }
+                .buttonStyle(GlowingButton(isMainCTA: true))
+
             }
     
         }
@@ -71,8 +72,10 @@ struct TwoPlayerManagerView: View {
         .onChange(of: twoPlayerManager.winnerDetermined) { winnerDetermined in
             if (winnerDetermined) {
                 self.winnerDisplayText = "Player \(twoPlayerManager.winner) wins this game! New game?"
+                self.restartButtonLabel = "New game"
             } else {
-                self.winnerDisplayText = "Competition is in progress.."
+                self.winnerDisplayText = "Competition is in progress..."
+                self.restartButtonLabel = "Next turn"
             }
         }
 

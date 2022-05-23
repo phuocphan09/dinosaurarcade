@@ -97,7 +97,7 @@ struct TwoPlayerManager {
         let player1LoseTime = self.twoPlayerState.player1State.timeLose
         let player2LoseTime = self.twoPlayerState.player2State.timeLose
         
-        // if both the player loses --> Determine winner
+        // if both the player loses --> Determine winner of the TURN
         if (player1LoseTime != 0 && player2LoseTime != 0) {
                         
             // update score
@@ -117,7 +117,7 @@ struct TwoPlayerManager {
             
         }
         
-        // find winner of the game
+        // find winner of the GAME
         if (player1Score + player2Score == 3 || player2Score == 2 && player1Score == 0 || player1Score == 2 && player2Score == 0) {
             
             self.winnerDetermined = true

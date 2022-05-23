@@ -9,14 +9,24 @@ import Foundation
 import SwiftUI
 
 struct GlowingButton: ButtonStyle {
+    
+    let isMainCTA: Bool
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
+        
             .padding()
-            .background(.blue)
-            .foregroundColor(.white)
-            .clipShape(Capsule())
+            
+            .background(isMainCTA ? .blue : .white)
+            .foregroundColor(isMainCTA ? .white : .blue)
+        
+            .overlay(
+                RoundedRectangle(cornerRadius: 5, style: .continuous)
+                    .stroke(Color.blue, lineWidth: 2)
+            )
             .scaleEffect(configuration.isPressed ? 1.2 : 1)
             .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
             .font(.system(size: 15, weight: .bold))
+            
     }
 }
