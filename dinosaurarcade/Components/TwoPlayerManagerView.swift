@@ -23,10 +23,10 @@ struct TwoPlayerManagerView: View {
             
                 Text("Player1   \(self.twoPlayerManager.player1Score)")
                     .font(.system(size: 30))
-                    .padding(20)
-                Text("-")
+//                    .padding(20)
+                Text("   -   ")
                     .font(.system(size: 30))
-                Text("   \(self.twoPlayerManager.player2Score)   Player2")
+                Text("\(self.twoPlayerManager.player2Score)   Player2")
                     .font(.system(size: 30))
                 }
             
@@ -43,12 +43,12 @@ struct TwoPlayerManagerView: View {
                 }
                 
                 Divider()
+                    .frame(width: 2, height: 30)
                 
                 Button(self.restartButtonLabel) {
                     twoPlayerManager.doRestart(forceNewGame: false)
                 }
                 
-
             }
     
         }
@@ -56,7 +56,7 @@ struct TwoPlayerManagerView: View {
         // update winner and restart button text
         .onChange(of: twoPlayerManager.winnerDetermined) { winnerDetermined in
             if (winnerDetermined) {
-                self.winnerDisplayText = "Player \(twoPlayerManager.winner) wins!"
+                self.winnerDisplayText = "Player \(twoPlayerManager.winner) wins this game! New game?"
                 self.restartButtonLabel = "New game"
             } else {
                 self.winnerDisplayText = "-"

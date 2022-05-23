@@ -23,14 +23,14 @@ struct ContentView: View {
                 
                 // Left side player
                 IndividualGame(playerID: 1, jumpKey: KeyEquivalent.tab, manager: self.$twoPlayerManager)
-                    .frame(minWidth: 400, maxWidth: 800, minHeight: 800, maxHeight: 800)
+                    .frame(minWidth: 500, maxWidth: 500, minHeight: 500, maxHeight: 500)
                 
                 // A divider between two players
                 Divider()
                     
                 // Right side player
                 IndividualGame(playerID: 2, jumpKey: KeyEquivalent.upArrow, manager: self.$twoPlayerManager)
-                    .frame(minWidth: 400, maxWidth: 800, minHeight: 800, maxHeight: 800)
+                    .frame(minWidth: 500, maxWidth: 500, minHeight: 500, maxHeight: 500)
             
             }
             
@@ -47,7 +47,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView()
-            ContentView()
+//            ContentView()
         }
     }
     

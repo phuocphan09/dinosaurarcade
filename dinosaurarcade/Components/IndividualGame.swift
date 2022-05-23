@@ -29,10 +29,10 @@ struct IndividualGame: View {
     var cactusHeight: CGFloat = 80 // 1:2 ratio
     
     // The game needs to know the position of its component real-time, hence using binding state
-    let initialCactusPosition = ["x": 500, "y": 400]
-    let initialDinosaurPosition = ["x": 200, "y": 400]
-    @State private var cactusPosition = CGPoint(x: 500, y: 400)
-    @State private var dinosaurPosition = CGPoint(x: 200, y: 400)
+    let initialCactusPosition = ["x": 450, "y": 250]
+    let initialDinosaurPosition = ["x": 200, "y": 250]
+    @State private var cactusPosition = CGPoint(x: 450, y: 250)
+    @State private var dinosaurPosition = CGPoint(x: 200, y: 250)
     
     // Keep track of individual score
     @State var score = 0
@@ -60,6 +60,7 @@ struct IndividualGame: View {
                     self.collisionCheck()
                 }
                 
+                // listen for restart signal
                 .onChange(of: manager.restartState) { restartState in
                     
                     print("player \(self.playerID) : \(restartState)")
