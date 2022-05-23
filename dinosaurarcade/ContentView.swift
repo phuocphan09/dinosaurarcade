@@ -28,6 +28,8 @@ struct ContentView: View {
                 
                 // A divider between two players
                 Divider()
+                    .frame(width: 2)
+                    .background(Color.gray)
                     
                 // Right side player
                 IndividualGame(playerID: 2, jumpKey: KeyEquivalent.upArrow, manager: self.$twoPlayerManager)

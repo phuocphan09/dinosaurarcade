@@ -14,8 +14,10 @@ struct TwoPlayerManager {
 //    @State var playerState2 = PlayerState(playerID: 2)
     
     @State var twoPlayerState = TwoPlayerState()
-    public var winner = 1
-    public var winnerDetermined = false
+    public var turnWinner = 1
+    public var turnWinnerDetermined = false
+    public var gameWinner = 1
+    public var gameWinnerDetermined = false
     public var restartState = [false, false]
     public var player1Score = 0
     public var player2Score = 0
@@ -45,16 +47,18 @@ struct TwoPlayerManager {
             self.restart(playerID: 1)
             self.restart(playerID: 2)
             
+            self.turnWinnerDetermined = false
+            
         }
         
         func newGame() {
             resetScore()
             restartGame()
-            self.winnerDetermined = false
+            self.gameWinnerDetermined = false
         }
         
         
-        if (forceNewGame || self.winnerDetermined) {
+        if (forceNewGame || self.gameWinnerDetermined) {
             
             newGame()
 
@@ -90,21 +94,23 @@ struct TwoPlayerManager {
     // helper
     private mutating func findWinner() {
         
-        // default winner is 1
-        self.winner = 1
-        
         // update score String
         let player1LoseTime = self.twoPlayerState.player1State.timeLose
         let player2LoseTime = self.twoPlayerState.player2State.timeLose
         
         // if both the player loses --> Determine winner of the TURN
         if (player1LoseTime != 0 && player2LoseTime != 0) {
+            
+            self.turnWinnerDetermined = true
                         
             // update score
             if (player2LoseTime > player1LoseTime) {
+                // if winner is player 2
+                self.turnWinner = 2
                 self.player2Score += 1
             } else {
                 // if winner is player 1
+                self.turnWinner = 1
                 self.player1Score += 1
             }
             
@@ -120,12 +126,12 @@ struct TwoPlayerManager {
         // find winner of the GAME
         if (player1Score + player2Score == 3 || player2Score == 2 && player1Score == 0 || player1Score == 2 && player2Score == 0) {
             
-            self.winnerDetermined = true
+            self.gameWinnerDetermined = true
             
             if (player2Score > player1Score) {
-                winner = 2
+                self.gameWinner = 2
             } else {
-                winner = 1
+                self.gameWinner = 1
             }
             
         }
