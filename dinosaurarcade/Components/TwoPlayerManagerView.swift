@@ -11,7 +11,7 @@ import SwiftUI
 struct TwoPlayerManagerView: View {
     
     @Binding var twoPlayerManager: TwoPlayerManager
-    @State var winnerDisplayText = "-"
+    @State var winnerDisplayText = "Competition is in progress.."
     @State var restartButtonLabel = "Next turn"
     
     var body: some View {
@@ -72,7 +72,7 @@ struct TwoPlayerManagerView: View {
             if (winnerDetermined) {
                 self.winnerDisplayText = "Player \(twoPlayerManager.winner) wins this game! New game?"
             } else {
-                self.winnerDisplayText = "-"
+                self.winnerDisplayText = "Competition is in progress.."
             }
         }
 
