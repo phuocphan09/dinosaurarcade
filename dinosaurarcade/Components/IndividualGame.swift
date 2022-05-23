@@ -28,6 +28,7 @@ struct IndividualGame: View {
     var dinosaurHeight: CGFloat = 70
     @State var cactusWidth: CGFloat = 40
 //    var cactusHeight: CGFloat = 80 // 1:2 ratio
+    @State var cactusSpeed = 1.0
     
     // The game needs to know the position of its component real-time, hence using binding state
     let initialCactusPosition = ["x": 450, "y": 250]
@@ -64,7 +65,7 @@ struct IndividualGame: View {
                 // render the UI, two components only
                 ZStack {
                     
-                    CactusManager(cactusPosition: self.$cactusPosition, width: self.$cactusWidth, game: self)
+                    CactusManager(cactusPosition: self.$cactusPosition, speed: self.$cactusSpeed, width: self.$cactusWidth, game: self)
                     
                     Dinosaur(dinosaurPosition: self.$dinosaurPosition, width: self.dinosaurWidth, height: self.dinosaurHeight, game: self, jumpKey: jumpKey)
                     
@@ -91,7 +92,6 @@ struct IndividualGame: View {
                 Image("dinosaur-bg-1")
                     .position(x: 0, y: 30)
             }
-            
             
         }
         
@@ -129,6 +129,9 @@ struct IndividualGame: View {
         
         // reset score
         self.score = 0
+        
+        // reset speed
+        self.cactusSpeed = 1.0
 
         // place objects to its places
         dinosaurPosition.x = CGFloat(self.initialDinosaurPosition["x"]!)

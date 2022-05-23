@@ -11,11 +11,13 @@ import SwiftUI
 struct CactusManager: View {
     
     @Binding var cactusPosition: CGPoint
-    @State var cactusXMovement = 30.0
     
-    let speed = 1.0 // change to 1.0 if willing to disable the increasing speed feature
-    @Binding var width: CGFloat
-//    let height: CGFloat
+    let cactusXMovement = 30.0
+    let increasingSpeed = 1.005 // change to 1.0 if willing to disable the speed increasing difficulty
+    @Binding var speed: Double
+    
+    @Binding var width: CGFloat // height of cactus is always doubled the width
+
     let game: IndividualGame
     
     var body: some View {
@@ -31,10 +33,13 @@ struct CactusManager: View {
                     withAnimation() {
                         
                         // move the cactus
-                        cactusPosition.x -= self.cactusXMovement
+                        cactusPosition.x -= self.cactusXMovement * self.speed
                         
-                        // increase the speed
-                        self.cactusXMovement *= self.speed
+                        self.speed *= self.increasingSpeed
+                        
+//                        // increase the speed
+//                        self.cactusXMovement *= self.speed
+                        
                     }
                     
                 } else {
