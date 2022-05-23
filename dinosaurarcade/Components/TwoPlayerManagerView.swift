@@ -21,19 +21,27 @@ struct TwoPlayerManagerView: View {
             // score display
             HStack {
             
-                Text("Player1   \(self.twoPlayerManager.player1Score)")
-                    .font(.system(size: 30))
-//                    .padding(20)
-                Text("   -   ")
-                    .font(.system(size: 30))
-                Text("\(self.twoPlayerManager.player2Score)   Player2")
-                    .font(.system(size: 30))
+                Text("Player1")
+                Spacer()
+                
+                HStack {
+                    Text("\(self.twoPlayerManager.player1Score)")
+                    Text("   -   ")
+                    Text("\(self.twoPlayerManager.player2Score)")
                 }
+                .font(.system(size: 70))
+                
+                Spacer()
+                Text("Player2")
+                
+            }
+            .font(.system(size: 30))
+            .foregroundColor(Color.blue)
             
             // the winner text
             Text(self.winnerDisplayText)
-                .font(.system(size: 30))
-                .foregroundColor(Color.red)
+                .font(.system(size: 30, weight: .bold))
+                .foregroundColor(Color.blue)
             
             // CTA buttons
             HStack {
@@ -41,13 +49,12 @@ struct TwoPlayerManagerView: View {
                 Button("New game") {
                     twoPlayerManager.doRestart(forceNewGame: true)
                 }
-                
-                Divider()
-                    .frame(width: 2, height: 30)
+                .buttonStyle(GlowingButton())
                 
                 Button(self.restartButtonLabel) {
                     twoPlayerManager.doRestart(forceNewGame: false)
                 }
+                .buttonStyle(GlowingButton())
                 
             }
     

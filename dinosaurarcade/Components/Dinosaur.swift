@@ -37,8 +37,8 @@ struct Dinosaur: View {
                 
                 withAnimation() {
                     // gravity for dinosaur
-                    if (dinosaurPosition.y <= 250 - 10) {
-                        dinosaurPosition.y += 10
+                    if (dinosaurPosition.y <= 250 - 15) {
+                        dinosaurPosition.y += 15
                     }
                 }
                 
@@ -59,7 +59,7 @@ struct Dinosaur: View {
         // jumps if only it's on the ground
         if (dinosaurPosition.y == 250) {
             withAnimation() {
-                dinosaurPosition.y -= 130
+                dinosaurPosition.y -= 150
             }
             
         }

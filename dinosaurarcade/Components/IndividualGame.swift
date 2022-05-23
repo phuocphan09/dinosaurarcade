@@ -21,6 +21,7 @@ struct IndividualGame: View {
     
     let dinosaurSize = ["width": CGFloat(30),
                         "height": CGFloat(30)]
+    let easierCollision = 0.9 // always less than 1, the lower the easier (accept to collide 1 - easierCollision into the cactus)
     
     // Size configuration for components
     var dinosaurWidth: CGFloat = 70
@@ -29,10 +30,10 @@ struct IndividualGame: View {
     var cactusHeight: CGFloat = 80 // 1:2 ratio
     
     // The game needs to know the position of its component real-time, hence using binding state
-    let initialCactusPosition = ["x": 450, "y": 250]
-    let initialDinosaurPosition = ["x": 200, "y": 250]
-    @State private var cactusPosition = CGPoint(x: 450, y: 250)
-    @State private var dinosaurPosition = CGPoint(x: 200, y: 250)
+    let initialCactusPosition = ["x": 420, "y": 250]
+    let initialDinosaurPosition = ["x": 120, "y": 250]
+    @State private var cactusPosition = CGPoint(x: 420, y: 250)
+    @State private var dinosaurPosition = CGPoint(x: 120, y: 250)
     
     // Keep track of individual score
     @State var score = 0
@@ -41,9 +42,12 @@ struct IndividualGame: View {
         
         VStack {
             
+            // Individual game's score
             Text("Score: \(self.score)")
                 .font(.system(size: 20))
+                .frame(maxWidth: .infinity, alignment: .topTrailing)
             
+            // Main components of a game
             VStack {
                 
                 // render the UI, two components only
@@ -90,7 +94,7 @@ struct IndividualGame: View {
         
         // Check for collision
         
-        if (abs(cactusPosition.x - dinosaurPosition.x) <= (cactusWidth + dinosaurWidth) / 2) && (abs(cactusPosition.y - dinosaurPosition.y) <= (cactusHeight + dinosaurHeight) / 2) {
+        if (abs(cactusPosition.x - dinosaurPosition.x) <= (cactusWidth + dinosaurWidth) / 2 * easierCollision) && (abs(cactusPosition.y - dinosaurPosition.y) <= (cactusHeight + dinosaurHeight) / 2 * easierCollision) {
             
             // if collision happens --> lose game
             self.lose()

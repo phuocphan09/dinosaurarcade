@@ -24,6 +24,7 @@ struct ContentView: View {
                 // Left side player
                 IndividualGame(playerID: 1, jumpKey: KeyEquivalent.tab, manager: self.$twoPlayerManager)
                     .frame(minWidth: 500, maxWidth: 500, minHeight: 500, maxHeight: 500)
+                    .padding(20)
                 
                 // A divider between two players
                 Divider()
@@ -31,6 +32,7 @@ struct ContentView: View {
                 // Right side player
                 IndividualGame(playerID: 2, jumpKey: KeyEquivalent.upArrow, manager: self.$twoPlayerManager)
                     .frame(minWidth: 500, maxWidth: 500, minHeight: 500, maxHeight: 500)
+                    .padding(20)
             
             }
             
