@@ -21,18 +21,18 @@ struct TwoPlayerManagerView: View {
             // score display
             HStack {
                 
-                Text("Player1")
-                Spacer()
+//                Text("Player 1")
+//                Spacer()
                 
                 HStack {
                     Text("\(self.twoPlayerManager.player1Score)")
                     Text("   -   ")
                     Text("\(self.twoPlayerManager.player2Score)")
                 }
-                .font(.system(size: 80))
+                .font(.system(size: 80, weight: .bold))
                 
-                Spacer()
-                Text("Player2")
+//                Spacer()
+//                Text("Player 2")
                 
             }
             .font(.system(size: 30))
@@ -86,7 +86,6 @@ struct TwoPlayerManagerView: View {
                 }
                 
             } else {
-                
                 
                 self.winnerDisplayText = "Competition is in progress..."
                 self.restartButtonLabel = "Next turn"

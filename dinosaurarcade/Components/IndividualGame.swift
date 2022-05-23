@@ -42,10 +42,21 @@ struct IndividualGame: View {
         
         VStack {
             
-            // Individual game's score
-            Text("Score: \(self.score)")
-                .font(.system(size: 20))
-                .frame(maxWidth: .infinity, alignment: .topTrailing)
+            HStack {
+                
+                // PlayerID label
+                Text("Player \(self.playerID)")
+                    .font(.system(size: 20))
+                    .foregroundColor(.blue)
+                    .frame(maxWidth: .infinity, alignment: .topLeading)
+                
+                // Individual game's score
+                Text("Score: \(self.score)")
+                    .font(.system(size: 20))
+                    .frame(maxWidth: .infinity, alignment: .topTrailing)
+            }
+            
+
             
             // Main components of a game
             VStack {
