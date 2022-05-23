@@ -21,18 +21,18 @@ struct IndividualGame: View {
     
     let dinosaurSize = ["width": CGFloat(30),
                         "height": CGFloat(30)]
-    let easierCollision = 0.9 // always less than 1, the lower the easier (accept to collide 1 - easierCollision into the cactus)
+    let easierCollision = 0.75 // always less than 1, the lower the easier (accept to collide 1 - easierCollision into the cactus)
     
     // Size configuration for components
     var dinosaurWidth: CGFloat = 70
     var dinosaurHeight: CGFloat = 70
-    var cactusWidth: CGFloat = 40
-    var cactusHeight: CGFloat = 80 // 1:2 ratio
+    @State var cactusWidth: CGFloat = 40
+//    var cactusHeight: CGFloat = 80 // 1:2 ratio
     
     // The game needs to know the position of its component real-time, hence using binding state
-    let initialCactusPosition = ["x": 420, "y": 250]
+    let initialCactusPosition = ["x": 450, "y": 250]
     let initialDinosaurPosition = ["x": 120, "y": 250]
-    @State private var cactusPosition = CGPoint(x: 420, y: 250)
+    @State private var cactusPosition = CGPoint(x: 450, y: 250)
     @State private var dinosaurPosition = CGPoint(x: 120, y: 250)
     
     // Keep track of individual score
@@ -64,7 +64,7 @@ struct IndividualGame: View {
                 // render the UI, two components only
                 ZStack {
                     
-                    CactusManager(cactusPosition: self.$cactusPosition, width: self.cactusWidth, height: self.cactusHeight, game: self)
+                    CactusManager(cactusPosition: self.$cactusPosition, width: self.$cactusWidth, game: self)
                     
                     Dinosaur(dinosaurPosition: self.$dinosaurPosition, width: self.dinosaurWidth, height: self.dinosaurHeight, game: self, jumpKey: jumpKey)
                     
@@ -95,9 +95,6 @@ struct IndividualGame: View {
             
         }
         
-        
-    
-        
     }
     
     
@@ -105,7 +102,7 @@ struct IndividualGame: View {
         
         // Check for collision
         
-        if (abs(cactusPosition.x - dinosaurPosition.x) <= (cactusWidth + dinosaurWidth) / 2 * easierCollision) && (abs(cactusPosition.y - dinosaurPosition.y) <= (cactusHeight + dinosaurHeight) / 2 * easierCollision) {
+        if (abs(cactusPosition.x - dinosaurPosition.x) <= (cactusWidth + dinosaurWidth) / 2 * easierCollision) && (abs(cactusPosition.y - dinosaurPosition.y) <= (2 * cactusWidth + dinosaurHeight) / 2 * easierCollision) {
             
             // if collision happens --> lose game
             self.lose()
