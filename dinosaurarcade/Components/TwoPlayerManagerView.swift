@@ -51,10 +51,17 @@ struct TwoPlayerManagerView: View {
                 }
                 .buttonStyle(GlowingButton())
                 
-                Button(self.restartButtonLabel) {
-                    twoPlayerManager.doRestart(forceNewGame: false)
+                
+                // show new turn button if only winner is not determined
+                if (!twoPlayerManager.winnerDetermined) {
+                    
+                    Button(self.restartButtonLabel) {
+                        twoPlayerManager.doRestart(forceNewGame: false)
+                    }
+                    .buttonStyle(GlowingButton())
+                    
                 }
-                .buttonStyle(GlowingButton())
+
                 
             }
     
@@ -64,10 +71,8 @@ struct TwoPlayerManagerView: View {
         .onChange(of: twoPlayerManager.winnerDetermined) { winnerDetermined in
             if (winnerDetermined) {
                 self.winnerDisplayText = "Player \(twoPlayerManager.winner) wins this game! New game?"
-                self.restartButtonLabel = "New game"
             } else {
                 self.winnerDisplayText = "-"
-                self.restartButtonLabel = "Next turn"
             }
         }
 
