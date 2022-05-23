@@ -22,16 +22,23 @@ struct Dinosaur: View {
     var body: some View {
         
         // The dinosaur
-        Rectangle()
+        Image("dinosaur-runner-2")
+            .resizable()
             .frame(width: self.width, height: self.height)
-            .foregroundColor(color)
             .position(x: dinosaurPosition.x, y: dinosaurPosition.y)
+        
+        // Mock dinosaur using a rectangle
+//        Rectangle()
+//            .frame(width: self.width, height: self.height)
+//            .foregroundColor(color)
+//            .position(x: dinosaurPosition.x, y: dinosaurPosition.y)
+        
             .onReceive(game.timer) {a in
                 
                 withAnimation() {
                     // gravity for dinosaur
-                    if (dinosaurPosition.y <= 400 - 20) {
-                        dinosaurPosition.y += 20
+                    if (dinosaurPosition.y <= 400 - 10) {
+                        dinosaurPosition.y += 10
                     }
                 }
                 

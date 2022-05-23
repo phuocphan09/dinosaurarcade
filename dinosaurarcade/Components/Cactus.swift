@@ -17,9 +17,15 @@ struct Cactus: View {
     
     var body: some View {
         
-            Rectangle()
-                .frame(width: width, height: height)
-                .foregroundColor(cactusColor)
+        // cactus from png
+        Image("cactus-1")
+            .resizable()
+        
+    
+        // mock cactus
+//        Rectangle()
+            .frame(width: width, height: height)
+            .foregroundColor(cactusColor)
         
             
     }

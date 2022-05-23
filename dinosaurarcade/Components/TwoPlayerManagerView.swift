@@ -21,10 +21,12 @@ struct TwoPlayerManagerView: View {
             // score display
             HStack {
             
-                Text("Player 1 Score: \(self.twoPlayerManager.player1Score)")
+                Text("Player1   \(self.twoPlayerManager.player1Score)")
                     .font(.system(size: 30))
                     .padding(20)
-                Text("Player 2 Score: \(self.twoPlayerManager.player2Score)")
+                Text("-")
+                    .font(.system(size: 30))
+                Text("   \(self.twoPlayerManager.player2Score)   Player2")
                     .font(.system(size: 30))
                 }
             

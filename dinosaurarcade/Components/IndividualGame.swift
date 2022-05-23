@@ -23,10 +23,10 @@ struct IndividualGame: View {
                         "height": CGFloat(30)]
     
     // Size configuration for components
-    var dinosaurWidth: CGFloat = 30
-    var dinosaurHeight: CGFloat = 30
-    var cactusWidth: CGFloat = 10
-    var cactusHeight: CGFloat = 120
+    var dinosaurWidth: CGFloat = 70
+    var dinosaurHeight: CGFloat = 70
+    var cactusWidth: CGFloat = 40
+    var cactusHeight: CGFloat = 80 // 1:2 ratio
     
     // The game needs to know the position of its component real-time, hence using binding state
     let initialCactusPosition = ["x": 500, "y": 400]
@@ -44,30 +44,39 @@ struct IndividualGame: View {
             Text("Score: \(self.score)")
                 .font(.system(size: 20))
             
-            // render the UI, two components only
-            ZStack {
+            VStack {
                 
-                Dinosaur(dinosaurPosition: self.$dinosaurPosition, width: self.dinosaurWidth, height: self.dinosaurHeight, game: self, jumpKey: jumpKey)
-                
-                CactusManager(cactusPosition: self.$cactusPosition, width: self.cactusWidth, height: self.cactusHeight, game: self)
+                // render the UI, two components only
+                ZStack {
                     
-            }
-            
-            // check for collision
-            .onReceive(timer) {a in
-                self.collisionCheck()
-            }
-            
-            .onChange(of: manager.restartState) { restartState in
-                
-                print("player \(self.playerID) : \(restartState)")
-                
-                if (restartState[self.playerID - 1]) {
-                    self.restart()
-                    manager.doneRestart()
+                    CactusManager(cactusPosition: self.$cactusPosition, width: self.cactusWidth, height: self.cactusHeight, game: self)
+                    
+                    Dinosaur(dinosaurPosition: self.$dinosaurPosition, width: self.dinosaurWidth, height: self.dinosaurHeight, game: self, jumpKey: jumpKey)
+                    
                 }
                 
+                // check for collision
+                .onReceive(timer) {a in
+                    self.collisionCheck()
+                }
+                
+                .onChange(of: manager.restartState) { restartState in
+                    
+                    print("player \(self.playerID) : \(restartState)")
+                    
+                    if (restartState[self.playerID - 1]) {
+                        self.restart()
+                        manager.doneRestart()
+                    }
+                    
+                }
+                
+                // background
+                Image("dinosaur-bg-1")
+                    .position(x: 0, y: 30)
             }
+            
+            
         }
         
         
