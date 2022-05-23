@@ -18,6 +18,7 @@ struct TwoPlayerManagerView: View {
         
         VStack {
             
+            // score display
             HStack {
             
                 Text("Player 1 Score: \(self.twoPlayerManager.player1Score)")
@@ -25,25 +26,27 @@ struct TwoPlayerManagerView: View {
                     .padding(20)
                 Text("Player 2 Score: \(self.twoPlayerManager.player2Score)")
                     .font(.system(size: 30))
-
                 }
             
-            // winner text
+            // the winner text
             Text(self.winnerDisplayText)
                 .font(.system(size: 30))
+                .foregroundColor(Color.red)
             
-            // buttons
+            // CTA buttons
             HStack {
-                
-                Button(self.restartButtonLabel) {
-                    twoPlayerManager.doRestart()
-                }
-                
-                Divider()
                 
                 Button("New game") {
                     twoPlayerManager.doRestart(forceNewGame: true)
                 }
+                
+                Divider()
+                
+                Button(self.restartButtonLabel) {
+                    twoPlayerManager.doRestart(forceNewGame: false)
+                }
+                
+
             }
     
         }

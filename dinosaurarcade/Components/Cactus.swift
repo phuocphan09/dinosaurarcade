@@ -16,8 +16,11 @@ struct Cactus: View {
     let cactusColor = Color.green
     
     var body: some View {
+        
             Rectangle()
-            .frame(width: width, height: height)
-            .foregroundColor(cactusColor)
+                .frame(width: width, height: height)
+                .foregroundColor(cactusColor)
+        
+            
     }
 }

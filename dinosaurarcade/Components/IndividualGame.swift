@@ -14,9 +14,7 @@ struct IndividualGame: View {
     // Input key to control
     let playerID: Int
     let jumpKey: KeyEquivalent
-//    let timer: Publishers.Autoconnect<Timer.TimerPublisher>
-    
-//    @State var isLose = false
+
     @State var timer = Timer.publish(every: 0.08, on: RunLoop.main, in: .common).autoconnect()
     @Binding var manager: TwoPlayerManager
     
@@ -36,32 +34,43 @@ struct IndividualGame: View {
     @State private var cactusPosition = CGPoint(x: 500, y: 400)
     @State private var dinosaurPosition = CGPoint(x: 200, y: 400)
     
+    // Keep track of individual score
+    @State var score = 0
+    
     var body: some View {
         
-        // render the UI, two components only
-        ZStack {
+        VStack {
             
-            Dinosaur(dinosaurPosition: self.$dinosaurPosition, width: self.dinosaurWidth, height: self.dinosaurHeight, game: self, jumpKey: jumpKey)
+            Text("Score: \(self.score)")
+                .font(.system(size: 20))
             
-            CactusManager(cactusPosition: self.$cactusPosition, width: self.cactusWidth, height: self.cactusHeight, game: self)
+            // render the UI, two components only
+            ZStack {
                 
-        }
-        
-        // check for collision
-        .onReceive(timer) {a in
-            self.collisionCheck()
-        }
-        
-        .onChange(of: manager.restartState) { restartState in
-            
-            print("player \(self.playerID) : \(restartState)")
-            
-            if (restartState[self.playerID - 1]) {
-                self.restart()
-                manager.doneRestart()
+                Dinosaur(dinosaurPosition: self.$dinosaurPosition, width: self.dinosaurWidth, height: self.dinosaurHeight, game: self, jumpKey: jumpKey)
+                
+                CactusManager(cactusPosition: self.$cactusPosition, width: self.cactusWidth, height: self.cactusHeight, game: self)
+                    
             }
             
+            // check for collision
+            .onReceive(timer) {a in
+                self.collisionCheck()
+            }
+            
+            .onChange(of: manager.restartState) { restartState in
+                
+                print("player \(self.playerID) : \(restartState)")
+                
+                if (restartState[self.playerID - 1]) {
+                    self.restart()
+                    manager.doneRestart()
+                }
+                
+            }
         }
+        
+        
     
         
     }
@@ -73,8 +82,14 @@ struct IndividualGame: View {
         
         if (abs(cactusPosition.x - dinosaurPosition.x) <= (cactusWidth + dinosaurWidth) / 2) && (abs(cactusPosition.y - dinosaurPosition.y) <= (cactusHeight + dinosaurHeight) / 2) {
             
+            // if collision happens --> lose game
             self.lose()
             
+        } else {
+            
+            // if collision NOT happen --> increment score
+            self.incrementScore()
+        
         }
         
     }
@@ -87,6 +102,9 @@ struct IndividualGame: View {
     
     // restart the game -- either for a new turn in a game or a new game
     func restart() {
+        
+        // reset score
+        self.score = 0
 
         // place objects to its places
         dinosaurPosition.x = CGFloat(self.initialDinosaurPosition["x"]!)
@@ -98,6 +116,10 @@ struct IndividualGame: View {
         // restart the timer
         self.timer = Timer.publish(every: 0.08, on: RunLoop.main, in: .common).autoconnect()
         
+    }
+    
+    func incrementScore() {
+        self.score += 1
     }
     
     func test() {
