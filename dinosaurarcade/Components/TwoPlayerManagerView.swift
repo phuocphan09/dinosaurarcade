@@ -32,9 +32,18 @@ struct TwoPlayerManagerView: View {
             Text(self.winnerDisplayText)
                 .font(.system(size: 30))
             
-            Button(self.restartButtonLabel) {
-                twoPlayerManager.doRestart()
-            
+            // buttons
+            HStack {
+                
+                Button(self.restartButtonLabel) {
+                    twoPlayerManager.doRestart()
+                }
+                
+                Divider()
+                
+                Button("New game") {
+                    twoPlayerManager.doRestart(forceNewGame: true)
+                }
             }
     
         }

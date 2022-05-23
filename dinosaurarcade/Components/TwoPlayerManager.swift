@@ -31,29 +31,38 @@ struct TwoPlayerManager {
                 
     }
     
-    public mutating func doRestart() {
+    public mutating func doRestart(forceNewGame: Bool = false) {
         
-        if (self.winnerDetermined) {
-            // new game
-            
+        func resetScore() {
             // reset score
             player1Score = 0
             player2Score = 0
+        }
+        
+        func restartGame() {
             
             // restart game
             self.restart(playerID: 1)
             self.restart(playerID: 2)
             
+        }
+        
+        func newGame() {
+            resetScore()
+            restartGame()
             self.winnerDetermined = false
-
+        }
+        
+        
+        if (forceNewGame || self.winnerDetermined) {
             
+            newGame()
+
         } else {
             
             // new turn -- no reset score
             
-            // restart game
-            self.restart(playerID: 1)
-            self.restart(playerID: 2)
+            restartGame()
 
         }
         
