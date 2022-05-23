@@ -13,7 +13,7 @@ struct CactusManager: View {
     @Binding var cactusPosition: CGPoint
     
     let cactusXMovement = 30.0
-    let increasingSpeed = 1.005 // change to 1.0 if willing to disable the speed increasing difficulty
+    let increasingSpeed = 1.0 // change to 1.0 if willing to disable the speed increasing difficulty
     @Binding var speed: Double
     
     @Binding var width: CGFloat // height of cactus is always doubled the width

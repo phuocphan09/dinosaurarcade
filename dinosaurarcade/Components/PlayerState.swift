@@ -24,6 +24,10 @@ class PlayerState {
         self.timeLose = Int(Date().timeIntervalSince1970 * 1000)
     }
     
+    public func removeTimeLose() {
+        self.timeLose = 0
+    }
+    
     public func getTimeLose() -> Int {
         return self.timeLose
     }

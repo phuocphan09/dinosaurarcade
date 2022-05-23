@@ -132,6 +132,10 @@ struct IndividualGame: View {
         
         // reset speed
         self.cactusSpeed = 1.0
+        
+        // reset loseTimeStamp
+        self.manager.twoPlayerState.removeLoseState(playerID: 1)
+        self.manager.twoPlayerState.removeLoseState(playerID: 2)
 
         // place objects to its places
         dinosaurPosition.x = CGFloat(self.initialDinosaurPosition["x"]!)

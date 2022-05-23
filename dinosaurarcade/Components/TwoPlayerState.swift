@@ -22,4 +22,14 @@ struct TwoPlayerState {
         }
     }
     
+    mutating func removeLoseState(playerID: Int) {
+        if (playerID == 1) {
+            self.player1State.removeTimeLose()
+        }
+        
+        if (playerID == 2) {
+            self.player2State.removeTimeLose()
+        }
+    }
+    
 }
