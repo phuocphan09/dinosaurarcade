@@ -10,7 +10,10 @@ import SwiftUI
 
 struct TwoPlayerManagerView: View {
     
+    // This view exchange data with TwoPlayerManager in order to operate
     @Binding var twoPlayerManager: TwoPlayerManager
+    
+    // Dynamic texts
     @State var winnerDisplayText = "Competition is in progress..."
     @State var restartButtonLabel = "Next turn"
     
@@ -21,9 +24,6 @@ struct TwoPlayerManagerView: View {
             // score display
             HStack {
                 
-//                Text("Player 1")
-//                Spacer()
-                
                 HStack {
                     Text("\(self.twoPlayerManager.player1Score)")
                     Text("   -   ")
@@ -31,8 +31,6 @@ struct TwoPlayerManagerView: View {
                 }
                 .font(.system(size: 80, weight: .bold))
                 
-//                Spacer()
-//                Text("Player 2")
                 
             }
             .font(.system(size: 30))
@@ -43,12 +41,11 @@ struct TwoPlayerManagerView: View {
                 .font(.system(size: 30, weight: .bold))
                 .foregroundColor(Color.blue)
             
-
-            
             // CTA buttons
             HStack {
                 
-                // show manual new game button if only winner is not determined
+                // Static new game button
+                // show Static new game button if only winner is not determined
                 if (!twoPlayerManager.gameWinnerDetermined) {
                     
                     Button("New game") {
@@ -58,7 +55,7 @@ struct TwoPlayerManagerView: View {
                     
                 }
                 
-            
+                // Dynamic Next turn / New game button
                 Button(self.restartButtonLabel) {
                     twoPlayerManager.doRestart(forceNewGame: false)
                 }

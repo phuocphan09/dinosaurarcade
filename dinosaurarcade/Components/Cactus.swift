@@ -10,23 +10,16 @@ import SwiftUI
 
 struct Cactus: View {
     
+    // the image of cactus
+    
     let width: CGFloat
     let height: CGFloat
-    
-    let cactusColor = Color.green
-    
+        
     var body: some View {
         
-        // cactus from png
+        // show cactus from png asset
         Image("cactus-1")
             .resizable()
-        
-    
-        // mock cactus
-//        Rectangle()
             .frame(width: width, height: height)
-            .foregroundColor(cactusColor)
-        
-            
     }
 }

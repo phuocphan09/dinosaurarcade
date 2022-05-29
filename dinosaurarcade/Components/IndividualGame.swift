@@ -11,38 +11,40 @@ import Combine
 
 struct IndividualGame: View {
     
-    // Input key to control
+    // PlayerID
     let playerID: Int
+    
+    // Input key to jump control
     let jumpKey: KeyEquivalent
-
+    
+    // Refresh rate for this game
     @State var timer = Timer.publish(every: 0.08, on: RunLoop.main, in: .common).autoconnect()
+    
+    // Bind with the Manager of this Individual
     @Binding var manager: TwoPlayerManager
     
-    
-    let dinosaurSize = ["width": CGFloat(30),
-                        "height": CGFloat(30)]
+    // Configuration
+    // Difficulty configuration
     let easierCollision = 0.75 // always less than 1, the lower the easier (accept to collide 1 - easierCollision into the cactus)
     
     // Size configuration for components
     var dinosaurWidth: CGFloat = 70
     var dinosaurHeight: CGFloat = 70
     @State var cactusWidth: CGFloat = 40
-//    var cactusHeight: CGFloat = 80 // 1:2 ratio
-    @State var cactusSpeed = 1.0
     
     // The game needs to know the position of its component real-time, hence using binding state
     let initialCactusPosition = ["x": 450, "y": 250]
     let initialDinosaurPosition = ["x": 120, "y": 250]
     @State private var cactusPosition = CGPoint(x: 450, y: 250)
     @State private var dinosaurPosition = CGPoint(x: 120, y: 250)
-    
-    // Keep track of individual score
+    @State var cactusSpeed = 1.0 // initial state of the cactus speed
     @State var score = 0
     
     var body: some View {
         
         VStack {
             
+            // Text labels
             HStack {
                 
                 // PlayerID label
@@ -65,9 +67,11 @@ struct IndividualGame: View {
                 // render the UI, two components only
                 ZStack {
                     
+                    // Cactus and the animation
                     CactusManager(cactusPosition: self.$cactusPosition, speed: self.$cactusSpeed, width: self.$cactusWidth, game: self)
                     
-                    Dinosaur(dinosaurPosition: self.$dinosaurPosition, width: self.dinosaurWidth, height: self.dinosaurHeight, game: self, jumpKey: jumpKey)
+                    // Dinosaur
+                    DinosaurManager(dinosaurPosition: self.$dinosaurPosition, width: self.dinosaurWidth, height: self.dinosaurHeight, timer: self.timer, jumpKey: jumpKey)
                     
                 }
                 
@@ -83,12 +87,12 @@ struct IndividualGame: View {
                     
                     if (restartState[self.playerID - 1]) {
                         self.restart()
-                        manager.doneRestart()
+                        manager.doneRestart() // (Observer Pattern) 
                     }
                     
                 }
                 
-                // background
+                // Background image
                 Image("dinosaur-bg-1")
                     .position(x: 0, y: 30)
             }
@@ -116,28 +120,31 @@ struct IndividualGame: View {
         
     }
     
-    // stop the game when collison is made
-    func lose() {
+    // stop the game when collison happens
+    public func lose() {
         
+        // disable the refresh rate
         self.timer.upstream.connect().cancel()
+        
+        // notify the manager (Observer Pattern)
         self.manager.lose(playerID: self.playerID)
         
     }
     
     // restart the game -- either for a new turn in a game or a new game
-    func restart() {
+    public func restart() {
         
         // reset score
         self.score = 0
         
-        // reset speed
+        // reset moving speed of cactus
         self.cactusSpeed = 1.0
         
-        // reset loseTimeStamp
+        // reset losing state
         self.manager.twoPlayerState.removeLoseState(playerID: 1)
         self.manager.twoPlayerState.removeLoseState(playerID: 2)
 
-        // place objects to its places
+        // place components to its original places
         dinosaurPosition.x = CGFloat(self.initialDinosaurPosition["x"]!)
         dinosaurPosition.y = CGFloat(self.initialDinosaurPosition["y"]!)
 
@@ -149,8 +156,10 @@ struct IndividualGame: View {
         
     }
     
-    func incrementScore() {
+    private func incrementScore() {
+        
         self.score += 1
+        
     }
     
     
