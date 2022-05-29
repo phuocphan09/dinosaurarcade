@@ -10,12 +10,13 @@ import SwiftUI
 
 class PlayerState {
     
+    // This class represent the data structure of the losing state of an individual player
+    // The losing state is defined as the timestamp collision between the dinosaur of that game with cactus happens
+    
     var playerID: Int
-    var isPaused: Bool
     var timeLose: Int
     
     init(playerID: Int) {
-        isPaused = false
         timeLose = 0
         self.playerID = playerID
     }

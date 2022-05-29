@@ -13,15 +13,16 @@ struct ContentView: View {
     
     var body: some View {
         
+        // Populate components vertically
         VStack {
             
-            // Manager
+            // Manager of two player
             TwoPlayerManagerView(twoPlayerManager: self.$twoPlayerManager)
                 .padding(20)
             
             HStack {
                 
-                // Left side player
+                // Left side player with id 1
                 IndividualGame(playerID: 1, jumpKey: KeyEquivalent.tab, manager: self.$twoPlayerManager)
                     .frame(minWidth: 500, maxWidth: 500, minHeight: 500, maxHeight: 500)
                     .padding(20)
@@ -31,7 +32,7 @@ struct ContentView: View {
                     .frame(width: 2)
                     .background(Color.gray)
                     
-                // Right side player
+                // Right side player with id 2
                 IndividualGame(playerID: 2, jumpKey: KeyEquivalent.upArrow, manager: self.$twoPlayerManager)
                     .frame(minWidth: 500, maxWidth: 500, minHeight: 500, maxHeight: 500)
                     .padding(20)
@@ -41,8 +42,6 @@ struct ContentView: View {
         }
 
     }
-        
-
     
 }
 
@@ -50,7 +49,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView()
-//            ContentView()
         }
     }
     

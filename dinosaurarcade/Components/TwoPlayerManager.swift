@@ -10,10 +10,9 @@ import SwiftUI
 
 struct TwoPlayerManager {
     
-//    @State var playerState1 = PlayerState(playerID: 1)
-//    @State var playerState2 = PlayerState(playerID: 2)
-    
     @State var twoPlayerState = TwoPlayerState()
+    
+    // configuration
     public var turnWinner = 1
     public var turnWinnerDetermined = false
     public var gameWinner = 1
@@ -22,10 +21,10 @@ struct TwoPlayerManager {
     public var player1Score = 0
     public var player2Score = 0
         
-    // public interface
+    // Listen for "losing" signal from IndividualGame (Observer Pattern)
     public mutating func lose(playerID: Int) {
         
-        // log state of the corresponding playerID
+        // log losing state of the corresponding playerID
         self.updateLoseState(playerID: playerID)
         
         // find winner
@@ -36,19 +35,14 @@ struct TwoPlayerManager {
     public mutating func doRestart(forceNewGame: Bool = false) {
         
         func resetScore() {
-            // reset score
             player1Score = 0
             player2Score = 0
         }
         
         func restartGame() {
-            
-            // restart game
             self.restart(playerID: 1)
             self.restart(playerID: 2)
-            
             self.turnWinnerDetermined = false
-            
         }
         
         func newGame() {
@@ -59,46 +53,39 @@ struct TwoPlayerManager {
         
         
         if (forceNewGame || self.gameWinnerDetermined) {
-            
+            // if force starting a new game or the winner of the game is determined
+            // restart game with score reset
             newGame()
-
         } else {
-            
-            // new turn -- no reset score
-            
+            // new turn
+            // restart game WITHOUT score reset
             restartGame()
-
         }
-        
     }
 
     
     public mutating func doneRestart() {
-
+        // the individual game will use this interface to notify if they have done resetting all the configurations
         self.restartState = [false, false]
-        
     }
     
     private mutating func restart(playerID: Int) {
-
+        // notify individual games to do restart (Observer Pattern)
         self.restartState = [true, true]
-        
     }
     
     private func updateLoseState(playerID: Int) {
-        
         self.twoPlayerState.updateLoseState(playerID: playerID)
-                
     }
     
     // helper
     private mutating func findWinner() {
         
-        // update score String
+        // retrive lose state of two player
         let player1LoseTime = self.twoPlayerState.player1State.timeLose
         let player2LoseTime = self.twoPlayerState.player2State.timeLose
         
-        // if both the player loses --> Determine winner of the TURN
+        // find winner of the TURN
         if (player1LoseTime != 0 && player2LoseTime != 0) {
             
             self.turnWinnerDetermined = true

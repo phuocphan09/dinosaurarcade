@@ -10,16 +10,17 @@ import SwiftUI
 
 struct GlowingButton: ButtonStyle {
     
+    // Helper structure to decorate CTAs conforming ButtonStyle
+    
+    // Two major theme is supported: Main and Secondary CTA
+    // Pass in "true" to indicate the theme of Main CTA
     let isMainCTA: Bool
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-        
             .padding()
-            
             .background(isMainCTA ? .blue : .white)
             .foregroundColor(isMainCTA ? .white : .blue)
-        
             .overlay(
                 RoundedRectangle(cornerRadius: 5, style: .continuous)
                     .stroke(Color.blue, lineWidth: 2)

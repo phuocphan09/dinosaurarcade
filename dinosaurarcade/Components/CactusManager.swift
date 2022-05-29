@@ -10,13 +10,15 @@ import SwiftUI
 
 struct CactusManager: View {
     
+    // Binding the position of dinosaur with individual game
+    // Since the Game needs to compare its position with cactus to determine winning/losing status
     @Binding var cactusPosition: CGPoint
+    @Binding var speed: Double // increase the moving speed of a cactus after each jump
+    @Binding var width: CGFloat // randomize the size of a cactus after each jump
     
+    // configuration
     let cactusXMovement = 30.0
     let increasingSpeed = 1.0 // change to 1.0 if willing to disable the speed increasing difficulty
-    @Binding var speed: Double
-    
-    @Binding var width: CGFloat // height of cactus is always doubled the width
 
     let game: IndividualGame
     
@@ -36,9 +38,6 @@ struct CactusManager: View {
                         cactusPosition.x -= self.cactusXMovement * self.speed
                         
                         self.speed *= self.increasingSpeed
-                        
-//                        // increase the speed
-//                        self.cactusXMovement *= self.speed
                         
                     }
                     
