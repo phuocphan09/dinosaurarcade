@@ -27,10 +27,13 @@
 <img width="1210" alt="image" src="https://user-images.githubusercontent.com/53080478/171051708-8ce68325-6271-4a29-b2d7-ecea11e62a1b.png">
 
 #### The "New game" button
-Use this button to force resetting the current game to 0 - 0 <img width="115" alt="image" src="https://user-images.githubusercontent.com/53080478/171051610-1344599d-8843-4974-b0c0-19b0cc782960.png">
+<img width="115" alt="image" src="https://user-images.githubusercontent.com/53080478/171051610-1344599d-8843-4974-b0c0-19b0cc782960.png">
+Use this button to force resetting the current game to 0 - 0 
 
 #### The "New turn" button**
-Use this button to move to the next turn of one game after having the winner of that turn determined <img width="106" alt="image" src="https://user-images.githubusercontent.com/53080478/171051632-ca762565-76e3-441b-bdb4-359b4964507a.png">
+<img width="106" alt="image" src="https://user-images.githubusercontent.com/53080478/171051632-ca762565-76e3-441b-bdb4-359b4964507a.png">
+Use this button to move to the next turn of one game after having the winner of that turn determined
 
 #### The "Winner announcement" text area
-The winner of a turn / a game and the corresponding next action will be displayed in this announcement text area <img width="490" alt="image" src="https://user-images.githubusercontent.com/53080478/171051971-3ec977d3-7468-4e35-a116-ad6189aefaad.png">
+<img width="490" alt="image" src="https://user-images.githubusercontent.com/53080478/171051971-3ec977d3-7468-4e35-a116-ad6189aefaad.png">
+The winner of a turn / a game and the corresponding next action will be displayed in this announcement text area
