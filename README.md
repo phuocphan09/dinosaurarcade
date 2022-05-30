@@ -17,6 +17,6 @@
 6. Wait for a few seconds and enjoy the game!
 
 ## How to play
-> 
+> Player 1 will use the Tab key to 
 
 ## 
