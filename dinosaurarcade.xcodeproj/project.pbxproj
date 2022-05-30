@@ -12,6 +12,7 @@
 		C672FFFB2831414F00E6B7E8 /* TwoPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C672FFFA2831414F00E6B7E8 /* TwoPlayerManager.swift */; };
 		C672FFFF2831430800E6B7E8 /* PlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C672FFFE2831430800E6B7E8 /* PlayerState.swift */; };
 		C68B0948283BAE1D00D584E8 /* GlowingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68B0947283BAE1D00D584E8 /* GlowingButton.swift */; };
+		C6A6EC2228454F23008059EC /* KeyEquivalentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6A6EC2128454F23008059EC /* KeyEquivalentManager.swift */; };
 		C6B044C02844005400488275 /* DinosaurManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B044BF2844005400488275 /* DinosaurManager.swift */; };
 		C6CA1DFE2827AD2B00B3E338 /* dinosaurarcadeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA1DFD2827AD2B00B3E338 /* dinosaurarcadeApp.swift */; };
 		C6CA1E002827AD2B00B3E338 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA1DFF2827AD2B00B3E338 /* ContentView.swift */; };
@@ -49,6 +50,7 @@
 		C672FFFA2831414F00E6B7E8 /* TwoPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoPlayerManager.swift; sourceTree = "<group>"; };
 		C672FFFE2831430800E6B7E8 /* PlayerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerState.swift; sourceTree = "<group>"; };
 		C68B0947283BAE1D00D584E8 /* GlowingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlowingButton.swift; sourceTree = "<group>"; };
+		C6A6EC2128454F23008059EC /* KeyEquivalentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyEquivalentManager.swift; sourceTree = "<group>"; };
 		C6B044BF2844005400488275 /* DinosaurManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinosaurManager.swift; sourceTree = "<group>"; };
 		C6CA1DFA2827AD2B00B3E338 /* dinosaurarcade.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dinosaurarcade.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6CA1DFD2827AD2B00B3E338 /* dinosaurarcadeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dinosaurarcadeApp.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				C672000428317CD100E6B7E8 /* TwoPlayerState.swift */,
 				C6720002283154A700E6B7E8 /* TwoPlayerManagerView.swift */,
 				C68B0947283BAE1D00D584E8 /* GlowingButton.swift */,
+				C6A6EC2128454F23008059EC /* KeyEquivalentManager.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				C672FFFB2831414F00E6B7E8 /* TwoPlayerManager.swift in Sources */,
 				C6CA1DFE2827AD2B00B3E338 /* dinosaurarcadeApp.swift in Sources */,
 				C6CA1E302827B18900B3E338 /* IndividualGame.swift in Sources */,
+				C6A6EC2228454F23008059EC /* KeyEquivalentManager.swift in Sources */,
 				C6CA1E2C2827AFEF00B3E338 /* Dinosaur.swift in Sources */,
 				C6720003283154A700E6B7E8 /* TwoPlayerManagerView.swift in Sources */,
 			);

@@ -48,7 +48,7 @@ struct IndividualGame: View {
             HStack {
                 
                 // PlayerID label
-                Text("Player \(self.playerID)")
+                Text("Player \(self.playerID) - use \(KeyEquivalentManager(key: self.jumpKey).getLabel()) key to jump")
                     .font(.system(size: 20))
                     .foregroundColor(.blue)
                     .frame(maxWidth: .infinity, alignment: .topLeading)
@@ -56,7 +56,7 @@ struct IndividualGame: View {
                 // Individual game's score
                 Text("Score: \(self.score)")
                     .font(.system(size: 20))
-                    .frame(maxWidth: .infinity, alignment: .topTrailing)
+                    .frame(alignment: .topTrailing)
             }
             
 
