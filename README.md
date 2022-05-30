@@ -5,7 +5,7 @@
 
 ## Getting started
 ### Option 1 - The Plug and Play: Download the latest build of the app and run
-> Download the built .app file and run it directly on a Mac to enjoy the game immediately
+> Download, unzip the file and run it directly on a Mac to enjoy the game immediately
 > https://drive.google.com/file/d/1lQICskaOzLVDH5Rc44M8qvyveDhogceO/view?usp=sharing
 
 ### Option 2 - The Explorer: Clone this code and Build with Xcode
