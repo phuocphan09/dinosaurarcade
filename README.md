@@ -3,8 +3,8 @@
 ## What is dinosaurarcade?
 > **One-sentence summary:** A dinosaur arcade game that allows two-player mode on Mac computers
 
-## Get started
-### Option 1 - The Plug and Play
+## Getting started
+### Option 1 - The Plug and Play: Download the latest build of the app and run
 > Download the built .app file and run it directly on a Mac to enjoy the game immediately
 > https://drive.google.com/file/d/1lQICskaOzLVDH5Rc44M8qvyveDhogceO/view?usp=sharing
 
@@ -18,8 +18,8 @@
 
 ## How to play
 ### The rule
-> - Try to drive the Dinosaur to avoid as many Cactuses on the road as possible. The Dinosaur colliding the Cactus first will lose the turn
-> - Player who wins 2 turns is the winner of a game
+> - Try to drive the Dinosaur to avoid as many Cacti on the road as possible. The Dinosaur colliding the Cactus first will lose the turn
+> - Player who wins 2 turns first will become the winner of the game
 
 ### The user interface
 
