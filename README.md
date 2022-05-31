@@ -5,7 +5,7 @@
 
 ## Getting started
 ### Option 1 - The Plug and Play: Download the latest build of the app and run
-> Download, unzip the file and run it directly on a Mac to enjoy the game immediately
+> Download, unzip the file and run it directly on a Mac to enjoy the game immediately!
 > https://drive.google.com/file/d/1lQICskaOzLVDH5Rc44M8qvyveDhogceO/view?usp=sharing
 
 ### Option 2 - The Explorer: Clone this code and Build with Xcode
@@ -13,7 +13,7 @@
 2. Choose "Clone an existing project" ![image](https://user-images.githubusercontent.com/53080478/171045696-2e526ecd-375f-48bc-b799-fe9b2de4b69b.png)
 3. Paste the link of this Repository https://github.com/phuocphan09/dinosaurarcade/
 4. Choose to checkout the branch "main" of this Repository
-5. Choose Product > Build or use the Shortcut "Command + B" to build the app
+5. Choose Product > Run or use the Shortcut "Command + R" to build and run the app
 6. Wait for a few seconds and enjoy the game!
 
 ## How to play
